@@ -1,12 +1,18 @@
 import TextMd from "@/ui/TextMd";
 import Burger from "/images/burgers/bg arrumado.png";
 import BurgerText from "./BurgerText";
+import { motion } from "framer-motion";
 
 function BurgerInfo() {
   return (
     <section className="bg-primary-50 px-10 py-10">
-      <div className="flex flex-col items-center justify-center gap-5 md:flex-row">
-        <img src={Burger} alt="Burger" className="order-1 h-80 w-80" />
+      <motion.div
+      initial={{ opacity: 0, x: -40 }}
+      whileInView={{ opacity: 1, x: 0 }} 
+      viewport={{ once: true }} 
+      transition={{ duration: 0.5 }}
+      className="flex flex-col items-center justify-center gap-5 md:flex-row max-w-4xl mx-auto">
+        <img src={Burger} alt="Burger" className="order-1 h-80 w-80 lg:h-[500px] lg:w-[500px]" />
         <div className="space-y-3">
           <TextMd label="Diferencial Diiner's" />
           <BurgerText label="Seleção Impecável dos Ingredientes">
@@ -35,7 +41,7 @@ function BurgerInfo() {
             elevando ainda mais o sabor.
           </BurgerText>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
