@@ -1,12 +1,12 @@
 import Hero from "@/features/home/Hero";
-// import MenuHome from "@/features/home/MenuHome";
+import MenuHome from "@/features/home/MenuHome";
 
 function Home() {
   return (
     <>
-      <p>Teste</p>
-      {/* <Hero /> */}
-      {/* <MenuHome /> */}
+      <Hero />
+      <div>Foda-se</div>
+      <MenuHome />
     </>
   );
 }
