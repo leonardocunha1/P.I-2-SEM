@@ -1,0 +1,172 @@
+[
+  {
+    "id": 1,
+    "name": "Diinernífico",
+    "image": "images/burgers/Burger1.png",
+    "category": "Burger",
+    "description": "Pão de brioche, hambúrguer de angus, queijo cheddar, bacon crocante, cebola crispy, alface, tomate, maionese de alho",
+    "tipo": "Um hambúrguer digno dos paladares mais exigentes, uma verdadeira obra-prima.",
+    "sizes": ["apenas lanche", "combo (P)", "combo (M)", "combo (G)"],
+    "price": [28.0, 32.0, 35.0, 38.0]
+  },
+  {
+    "id": 2,
+    "name": "Diiner Tudo",
+    "image": "images/burgers/Burger2.png",
+    "category": "Burger",
+    "description": "Pão artesanal, carne, queijo, bacon, ovo, presunto, alface, tomate, cebola caramelizada, molho especial",
+    "tipo": "Um delicioso hambúrguer para os gostos mais refinados e para os amantes de lanches artesanais.",
+    "sizes": ["apenas lanche", "combo (P)", "combo (M)", "combo (G)"],
+    "price": [25.0, 29.0, 32.0, 35.0]
+  },
+  {
+    "id": 3,
+    "name": "Burger Heaven",
+    "image": "images/burgers/Burger3.png",
+    "category": "Burger",
+    "description": "Pão, carne, queijo, bacon, alface, tomate, maionese",
+    "tipo": "Para os apaixonados por bacon, uma explosão de sabor.",
+    "sizes": ["apenas lanche", "combo (P)", "combo (M)", "combo (G)"],
+    "price": [18.2, 22.2, 25.2, 28.2]
+  },
+  {
+    "id": 4,
+    "name": "Eggcellent Burgers",
+    "image": "images/burgers/Burger4.png",
+    "category": "Burger",
+    "description": "Pão, carne, queijo, ovo, alface, tomate, maionese",
+    "tipo": "Perfeito para os amantes de ovos e lanches substanciais.",
+    "sizes": ["apenas lanche", "combo (P)", "combo (M)", "combo (G)"],
+    "price": [16.8, 20.8, 23.8, 26.8]
+  },
+  {
+    "id": 5,
+    "name": "All-In Burger",
+    "image": "images/burgers/Burger5.png",
+    "category": "Burger",
+    "description": "Pão, carne, queijo, bacon, ovo, alface, tomate, maionese, milho, ervilha, batata palha",
+    "tipo": "Para os que querem tudo em um só lanche, uma experiência completa.",
+    "sizes": ["apenas lanche", "combo (P)", "combo (M)", "combo (G)"],
+    "price": [20.3, 24.3, 27.3, 30.3]
+  },
+  {
+    "id": 6,
+    "name": "Chicken Delight",
+    "image": "images/burgers/Burger6.png",
+    "category": "Burger",
+    "description": "Pão, filé de frango, queijo, alface, tomate, maionese",
+    "tipo": "Leve e saboroso, perfeito para os amantes de frango.",
+    "sizes": ["apenas lanche", "combo (P)", "combo (M)", "combo (G)"],
+    "price": [18.5, 22.5, 25.5, 28.5]
+  },
+  {
+    "id": 7,
+    "name": "Veggie Kingdom",
+    "image": "images/burgers/Burger7.png",
+    "category": "Burger",
+    "description": "Pão integral, hambúrguer vegano, queijo vegano, alface, tomate, cebola roxa, maionese vegana",
+    "tipo": "Uma opção deliciosa e sustentável para os vegetarianos.",
+    "sizes": ["apenas lanche", "combo (P)", "combo (M)", "combo (G)"],
+    "price": [19.0, 23.0, 26.0, 29.0]
+  },
+  {
+    "id": 8,
+    "name": "Prime Burger",
+    "image": "images/burgers/Burger8.png",
+    "category": "Burger",
+    "description": "Pão, hambúrguer de picanha, queijo, bacon, alface, tomate, maionese",
+    "tipo": "Para os amantes de carnes nobres, uma experiência única.",
+    "sizes": ["apenas lanche", "combo (P)", "combo (M)", "combo (G)"],
+    "price": [22.5, 26.5, 29.5, 32.5]
+  },
+  {
+    "id": 9,
+    "name": "Burger Palace",
+    "image": "images/burgers/Burger9.png",
+    "category": "Burger",
+    "description": "Pão, carne, queijo, alface, tomate, maionese",
+    "tipo": "Um clássico irresistível para qualquer ocasião.",
+    "sizes": ["apenas lanche", "combo (P)", "combo (M)", "combo (G)"],
+    "price": [15.9, 19.9, 22.9, 25.9]
+  },
+  {
+    "id": 10,
+    "name": "Refrigerante",
+    "image": "images/bebidas/Bebida1.png",
+    "category": "Bebida",
+    "description": "Lata de refrigerante (Coca-Cola, Pepsi, Guaraná)",
+    "tipo": "Refrescante e delicioso.",
+    "sizes": ["150ml", "300ml", "500ml", "700ml"],
+    "price": [5.0, 7.0, 9.0]
+  },
+  {
+    "id": 11,
+    "name": "Suco Natural",
+    "image": "images/bebidas/Bebida2.png",
+    "category": "Bebida",
+    "description": "Suco natural de laranja, limão ou morango",
+    "tipo": "Opção saudável e refrescante.",
+    "sizes": ["150ml", "300ml", "500ml", "700ml"],
+    "price": [7.0, 10.0, 12.0]
+  },
+  {
+    "id": 12,
+    "name": "Milkshake",
+    "image": "images/bebidas/Bebida3.png",
+    "category": "Bebida",
+    "description": "Milkshake de baunilha, chocolate ou morango",
+    "tipo": "Uma sobremesa em forma de bebida, perfeita para acompanhar seu lanche.",
+    "sizes": ["150ml", "300ml", "500ml", "700ml"],
+    "price": [10.0, 15.0, 18.0]
+  },
+  {
+    "id": 13,
+    "name": "Cerveja Artesanal",
+    "image": "images/bebidas/Bebida4.png",
+    "category": "Bebida",
+    "description": "Cerveja artesanal IPA, Lager ou Stout",
+    "tipo": "Perfeita para acompanhar seu hambúrguer gourmet.",
+    "sizes": ["150ml", "300ml", "500ml", "700ml"],
+    "price": [12.0, 18.0, 22.0]
+  },
+  {
+    "id": 14,
+    "name": "Sorvete",
+    "image": "images/sobremesas/Sobremesa1.png",
+    "category": "Sobremesa",
+    "description": "Sorvete de baunilha, chocolate ou morango",
+    "tipo": "A sobremesa perfeita para finalizar sua refeição.",
+    "sizes": ["Pote (P)", "Pote (M)", "Pote (G)"],
+    "price": [8.0, 12.0, 16.0]
+  },
+  {
+    "id": 15,
+    "name": "Brownie",
+    "image": "images/sobremesas/Sobremesa2.png",
+    "category": "Sobremesa",
+    "description": "Brownie de chocolate com sorvete",
+    "tipo": "Deliciosamente doce e perfeito para os chocólatras.",
+    "sizes": ["Pote (P)", "Pote (M)", "Pote (G)"],
+    "price": [10.0, 15.0, 20.0]
+  },
+  {
+    "id": 16,
+    "name": "Cheesecake",
+    "image": "images/sobremesas/Sobremesa3.png",
+    "category": "Sobremesa",
+    "description": "Cheesecake de frutas vermelhas",
+    "tipo": "Leve, doce e irresistível.",
+    "sizes": ["Pote (P)", "Pote (M)", "Pote (G)"],
+    "price": [12.0, 18.0, 24.0]
+  },
+  {
+    "id": 17,
+    "name": "Tiramisu",
+    "image": "images/sobremesas/Sobremesa4.png",
+    "category": "Sobremesa",
+    "description": "Tiramisu tradicional com café e mascarpone",
+    "tipo": "Uma clássica sobremesa italiana para um final de refeição perfeito.",
+    "sizes": ["Pote (P)", "Pote (M)", "Pote (G)"],
+    "price": [14.0, 20.0, 26.0]
+  }
+]

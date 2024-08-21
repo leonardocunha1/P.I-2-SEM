@@ -1,5 +1,5 @@
 import Herosvg from "@/ui/Herosvg";
-import ImageHero from "../../../public/images/burgers/bg-hero.png";
+import ImageHero from "/images/burgers/bg-hero.png";
 import { Link } from "react-router-dom";
 
 function Hero() {
@@ -15,7 +15,7 @@ function Hero() {
           </h3>
           <Link
             to="/order"
-            className="mx-auto mt-5 inline-block rounded-xl bg-primary-600 px-4 py-2 text-base font-bold tracking-wide text-stone-50 duration-500 hover:bg-red-900 sm:mx-0 sm:max-w-max"
+            className="mx-auto mt-5 inline-block rounded-xl bg-primary-600 px-4 py-2 text-base font-bold tracking-wide text-primary-100 duration-500 hover:bg-red-900 sm:mx-0 sm:max-w-max"
           >
             Peça já!
           </Link>

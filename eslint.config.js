@@ -33,7 +33,7 @@ export default [
         "warn",
         { allowConstantExport: true },
       ],
-      //   "react/prop-types": "off", // Desativa avisos de PropTypes
+      "react/prop-types": "off", // Desativa avisos de PropTypes
     },
   },
 ];
