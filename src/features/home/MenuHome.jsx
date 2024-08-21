@@ -7,7 +7,7 @@ import TextMd from "../../ui/TextMd";
 function MenuHome() {
   return (
     <section className="space-y-3 bg-primary-100 py-10">
-      <TextMd label="Menu" />
+      {/* <TextMd label="Opções" /> */}
       <div className="flex flex-col items-center gap-7 sm:flex-row sm:justify-center sm:gap-20">
         <MenuItems image={Burger} label="Burgers" />
         <MenuItems image={Sobremesa} label="Sobremesas" />
