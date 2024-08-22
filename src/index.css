@@ -9,28 +9,7 @@
     font-family: 'Calistoga', cursive;
 } */
 
-
-.bg-image-hero {
-    background-image: url('/bg-pc.svg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-@media (min-width: 768px) and (max-width: 1200px) {
-
-    .bg-image-hero {
-        background-image: url('/bg-tablet.svg');
-    }
-}
-
-@media (max-width: 767px) {
-
-    .bg-image-hero {
-        background-image: url('/bg-mobile.svg');
-    }
-}
-
+/* LIDA COM O  SHAPER DO HERO (LOCALIZADO NO HOME) */
 
 .custom-shape-divider-bottom-1709056755 {
     position: absolute;
@@ -51,4 +30,38 @@
 
 .custom-shape-divider-bottom-1709056755 .shape-fill {
     fill: #F26820;
+}
+
+/* LIDA COM O SWIPER DOS FEEDBACKS (LOCALIZADO NO HOME)  */
+
+swiper-container {
+    width: 240px;
+    height: 320px;
+    max-width: 100%;
+}
+
+swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    font-size: 22px;
+    color: #fff;
+}
+
+swiper-slide:nth-child(odd) {
+    background-color: #dd6108;
+    /* Ímpares */
+}
+
+swiper-slide:nth-child(even) {
+    background-color: #1c1917;
+    /* Pares */
+}
+
+/* Tamanho do map container */
+
+.leaflet-container {
+    width: 100%;
+    height: 100%;
 }

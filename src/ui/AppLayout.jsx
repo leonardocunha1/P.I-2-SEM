@@ -4,7 +4,7 @@ import MenuItens from "./MenuItems";
 
 function AppLayout() {
   return (
-    <div className="relative flex h-screen flex-col bg-stone-100 font-poppins2 text-sm text-stone-800">
+    <div className="relative flex h-screen flex-col overflow-x-hidden bg-stone-100 font-poppins2 text-sm text-stone-800">
       <aside className="z-20 bg-stone-900 px-3 py-4">
         <div className="mx-auto flex max-w-6xl flex-1 items-center justify-between">
           <Logo />
@@ -21,6 +21,15 @@ function AppLayout() {
       <main className="z-10 flex-1">
         <Outlet />
       </main>
+      <footer className="bg-stone-900 px-4 py-6 text-center text-primary-100">
+        <p className="text-sm">
+          &copy; {new Date().getFullYear()} -{" "}
+          <span className="font-semibold text-primary-500">
+            Diiner&apos;s Burgers
+          </span>
+          . Todos os direitos reservados.
+        </p>
+      </footer>
     </div>
   );
 }
