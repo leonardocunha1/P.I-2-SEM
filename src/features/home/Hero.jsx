@@ -13,7 +13,7 @@ function Hero() {
         className="mx-auto flex h-full max-w-6xl flex-col items-center justify-center gap-10 lg:flex-row lg:justify-around"
       >
         <div className="flex flex-col lg:-mt-20">
-          <h1 className="mb-5 flex flex-col text-center font-calistoga2 text-6xl font-bold text-primary-50 sm:mt-0 sm:text-[90px] lg:text-start lg:text-[100px] xl:text-[120px]">
+          <h1 className="mb-5 flex flex-col text-center font-calistoga2 text-5xl font-bold text-primary-50 sm:mt-0 sm:text-[90px] lg:text-start lg:text-[100px] xl:text-[120px]">
             Diiner&apos;s <span className="">Burgers</span>
           </h1>
           <h3 className="text-center text-xl font-semibold text-primary-500 sm:text-2xl lg:text-start">
@@ -29,7 +29,7 @@ function Hero() {
         <img
           src={ImageHero}
           alt=""
-          className="h-80 sm:h-96 lg:h-[500px] xl:h-[550px]"
+          className="h-72 sm:h-96 lg:h-[500px] xl:h-[550px]"
         />
       </motion.div>
       <Herosvg />
