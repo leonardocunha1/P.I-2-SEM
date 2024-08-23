@@ -1,6 +1,9 @@
 import TextMd from "@/ui/TextMd";
 import Slider from "./Slider";
+
 import { motion } from "framer-motion";
+
+import ShapeBGTop from "/shape-home-top.svg";
 
 const fakeComments = [
   {
@@ -22,16 +25,19 @@ const fakeComments = [
 
 function Feedbacks() {
   return (
-    <section className="bg-primary-100 px-5 py-10">
-      <motion.div
-        initial={{ opacity: 0, x: -40 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-      >
-        <TextMd label="Feedbacks" />
-        <Slider comments={fakeComments} />
-      </motion.div>
+    <section className="relative bg-primary-50 pb-12 pt-10 md:pt-20 lg:pt-28 xl:pt-32">
+      <div className="px-5">
+        <motion.div
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <TextMd label="Feedbacks" />
+          <Slider comments={fakeComments} />
+        </motion.div>
+      </div>
+      <img src={ShapeBGTop} alt="Shape" className="absolute top-0" />
     </section>
   );
 }

@@ -5,6 +5,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+    .clip-your-needful-style {
+        clip-path: polygon(0 0, 100% 0, 100% 97%, 75% 100%, 50% calc(100% - 50px), 25% 100%, 0 97%);
+    }
+}
+
 /* .font-calistoga {
     font-family: 'Calistoga', cursive;
 } */
@@ -34,13 +40,13 @@
 
 /* LIDA COM O SWIPER DOS FEEDBACKS (LOCALIZADO NO HOME)  */
 
-swiper-container {
+.mySwiper-container {
     width: 240px;
     height: 320px;
     max-width: 100%;
 }
 
-swiper-slide {
+.mySwiper-slide {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -49,14 +55,18 @@ swiper-slide {
     color: #fff;
 }
 
-swiper-slide:nth-child(odd) {
+.mySwiper-slide:nth-child(odd) {
     background-color: #dd6108;
-    /* Ímpares */
 }
 
-swiper-slide:nth-child(even) {
+.mySwiper-slide:nth-child(even) {
     background-color: #1c1917;
-    /* Pares */
+}
+
+@media (min-width: 768px) {
+    .mySwiper-container {
+        width: 320px;
+    }
 }
 
 /* Tamanho do map container */

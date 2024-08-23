@@ -1,4 +1,7 @@
 import { Link, Outlet } from "react-router-dom";
+
+import { FaWhatsapp } from "react-icons/fa";
+
 import Logo from "./Logo";
 import MenuItens from "./MenuItems";
 
@@ -18,7 +21,7 @@ function AppLayout() {
           </Link>
         </div>
       </aside>
-      <main className="z-10 flex-1">
+      <main className="relative z-0 flex flex-1 flex-col">
         <Outlet />
       </main>
       <footer className="bg-stone-900 px-4 py-6 text-center text-primary-100">
@@ -30,6 +33,13 @@ function AppLayout() {
           . Todos os direitos reservados.
         </p>
       </footer>
+      <a
+        href="https://wa.me/5516999999999"
+        target="_blank"
+        className="fixed bottom-3 right-9 z-[900px]"
+      >
+        <FaWhatsapp className="h-12 w-12 text-green-500 duration-200 hover:text-orange-700" />
+      </a>
     </div>
   );
 }
