@@ -16,7 +16,7 @@ function BurgerInfo() {
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
           className="mx-auto flex max-w-4xl flex-col items-center justify-center gap-5 md:order-1 md:flex-row"
         >
           <img

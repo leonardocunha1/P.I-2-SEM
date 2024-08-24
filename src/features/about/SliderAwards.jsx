@@ -5,6 +5,8 @@ import DeliciousBurger from "/images/premios/delicious.png";
 import Medal from "/images/premios/medal.png";
 import TextMd from "@/ui/TextMd";
 
+import { motion } from "framer-motion";
+
 const awards = [
   {
     name: "Melhor hamburgueria de Franca - 2021",
@@ -28,8 +30,14 @@ const awards = [
 
 function SliderAwards() {
   return (
-    <section className="bg-primary-50 px-5 pb-20 pt-10">
-      <div className="mx-auto mt-8 max-w-60 text-stone-900 md:max-w-xl lg:max-w-5xl">
+    <section className="bg-primary-50 px-5 py-10">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        viewport={{ once: true }}
+        className="mx-auto text-stone-900"
+      >
         <TextMd label="Premiações" />
         <swiper-container
           class="mySliderAwards-container"
@@ -40,7 +48,7 @@ function SliderAwards() {
           autoplay-disable-on-interaction="true"
           slides-per-view="1"
           style={{
-            "--swiper-pagination-color": "#fdba74",
+            "--swiper-pagination-color": "#1c1917",
             "--swiper-pagination-bullet-size": "10px",
             // "--swiper-pagination-bullet-inactive-color": "#999999",
             // "--swiper-pagination-bullet-inactive-opacity": "1",
@@ -49,19 +57,23 @@ function SliderAwards() {
         >
           {awards.map((award, index) => (
             <swiper-slide class="mySliderAwards-slide" key={index}>
-              <div className="rounded-full bg-stone-900 p-5">
+              <div className="rounded-xl bg-stone-900 p-5">
                 <img
                   src={award.image_url}
                   alt={award.name}
-                  className="h-40 w-full rounded-xl object-contain"
+                  className="h-40 w-full object-contain"
                 />
-                <h3 className="mt-3 text-lg font-semibold">{award.name}</h3>
-                <p className="mt-2 text-sm">{award.description}</p>
+                <h3 className="mt-3 text-center text-lg font-semibold text-primary-100">
+                  {award.name}
+                </h3>
+                <p className="mt-2 text-center text-sm text-primary-50">
+                  {award.description}
+                </p>
               </div>
             </swiper-slide>
           ))}
         </swiper-container>
-      </div>
+      </motion.div>
     </section>
   );
 }

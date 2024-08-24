@@ -9,8 +9,8 @@ function Hero() {
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="mx-auto flex h-full max-w-6xl flex-col items-center justify-center gap-10 lg:flex-row lg:justify-around"
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className="mx-auto flex max-w-6xl flex-col items-center justify-center gap-10 lg:flex-row lg:justify-around"
       >
         <div className="flex flex-col lg:-mt-20">
           <h1 className="mb-5 flex flex-col text-center font-calistoga2 text-5xl font-bold text-primary-100 sm:mt-0 sm:text-[90px] lg:text-start lg:text-[100px] xl:text-[120px]">

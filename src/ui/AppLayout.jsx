@@ -5,6 +5,8 @@ import { FaWhatsapp } from "react-icons/fa";
 import Logo from "./Logo";
 import MenuItens from "./MenuItems";
 
+import { motion } from "framer-motion";
+
 function AppLayout() {
   return (
     <div className="relative flex h-dvh flex-col overflow-x-hidden bg-stone-100 font-poppins2 text-sm text-stone-800">
@@ -13,12 +15,18 @@ function AppLayout() {
           <Logo />
           <MenuItens />
           {/* A LÓGICA AQUI VAI MUDAR, SE O USUÁRIO TIVER LOGADO VAI MOSTAR O NOME DELE, SE NÃO TIVER VAI MOSTRAR O LOGIN */}
-          <Link
-            to="/login"
-            className="hidden rounded-xl bg-primary-600 px-4 py-2 text-base font-bold tracking-wide text-stone-900 duration-500 hover:bg-red-900 hover:text-stone-50 sm:block"
+          <motion.div
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            className="hidden sm:block"
           >
-            Login
-          </Link>
+            <Link
+              to="/home"
+              className="rounded-xl bg-primary-600 px-4 py-2 text-base font-bold tracking-wide text-primary-50 duration-500 hover:bg-red-900"
+            >
+              Login
+            </Link>
+          </motion.div>
         </div>
       </aside>
       <main className="relative z-0 flex flex-1 flex-col">

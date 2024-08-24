@@ -17,7 +17,7 @@ function Location() {
         initial={{ opacity: 0, x: 40 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.5, delay: 0.3 }}
         className="mx-auto flex h-96 max-w-2xl flex-col"
       >
         <TextMd label="Localização" />

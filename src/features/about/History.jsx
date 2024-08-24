@@ -1,10 +1,17 @@
 import TextMd from "@/ui/TextMd";
 import img1 from "/images/img-about/image1-aboutus.png";
+import { motion } from "framer-motion";
 
 function History() {
   return (
     <section className="clip-your-needful-style relative z-0 -mt-20 bg-primary-50 px-5 pb-20 pt-10 md:pb-32">
-      <div className="mx-auto mt-20 flex max-w-4xl flex-col items-center gap-4 px-5 md:flex-row">
+      <motion.div
+        initial={{ opacity: 0, x: -40 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className="mx-auto mt-20 flex max-w-4xl flex-col items-center gap-4 px-5 md:flex-row"
+      >
         <img
           src={img1}
           alt="Imagem nossa história"
@@ -45,7 +52,7 @@ function History() {
             </li>
           </ul>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
