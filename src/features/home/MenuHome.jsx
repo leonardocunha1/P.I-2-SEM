@@ -11,7 +11,7 @@ function MenuHome() {
       <motion.div
         initial={{ opacity: 0, y: 90 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.3, delay: 1.5 }}
+        transition={{ duration: 0.6, delay: 1.5 }}
         viewport={{ once: true }}
         className="flex flex-col items-center gap-7 sm:flex-row sm:justify-center sm:gap-20"
       >
