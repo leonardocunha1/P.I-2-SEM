@@ -42,6 +42,7 @@ function SliderAwards() {
         <swiper-container
           class="mySliderAwards-container"
           loop="true"
+          space-between="10"
           pagination="true"
           pagination-clickable="true"
           autoplay-delay="3000"
@@ -57,7 +58,7 @@ function SliderAwards() {
         >
           {awards.map((award, index) => (
             <swiper-slide class="mySliderAwards-slide" key={index}>
-              <div className="rounded-xl bg-stone-900 p-5">
+              <div className="flex h-[430px] flex-col justify-center rounded-xl bg-stone-900 px-5 pb-10 pt-5 sm:h-auto">
                 <img
                   src={award.image_url}
                   alt={award.name}
