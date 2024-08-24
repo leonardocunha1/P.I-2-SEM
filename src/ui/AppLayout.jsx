@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 
 function AppLayout() {
   return (
-    <div className="relative flex h-dvh flex-col overflow-x-hidden bg-stone-100 font-poppins2 text-sm text-stone-800">
+    <div className="relative flex h-dvh flex-col overflow-x-hidden bg-primary-50 font-poppins2 text-sm text-stone-800">
       <aside className="z-20 bg-stone-900 px-3 py-4">
         <div className="mx-auto flex max-w-6xl flex-1 items-center justify-between">
           <Logo />

@@ -1,8 +1,8 @@
 import "swiper/css";
 
-import BurgerGold from "/images/premios/burger-gold.png";
-import DeliciousBurger from "/images/premios/delicious.png";
-import Medal from "/images/premios/medal.png";
+import BurgerGold from "/images/img-about/premios/burger-gold.png";
+import DeliciousBurger from "/images/img-about/premios/delicious.png";
+import Medal from "/images/img-about/premios/medal.png";
 import TextMd from "@/ui/TextMd";
 
 import { motion } from "framer-motion";

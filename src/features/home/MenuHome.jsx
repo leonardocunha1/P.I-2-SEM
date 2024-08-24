@@ -1,6 +1,6 @@
-import Bebida from "/images/bebidas/Bebida1.png";
-import Burger from "/images/burgers/Burger1.png";
-import Sobremesa from "/images/sobremesas/Sobremesa1.png";
+import Bebida from "/images/bebidas/cerveja.png";
+import Burger from "/images/burgers/Burger8.png";
+import Sobremesa from "/images/sobremesas/frapuccino.png";
 import MenuItems from "./MenuItems";
 import { motion } from "framer-motion";
 // import TextMd from "../../ui/TextMd";

@@ -3,6 +3,7 @@ import { useState } from "react";
 import fakedb from "../../../fakedb";
 import { motion, AnimatePresence } from "framer-motion";
 import { formatCurrency } from "@/utils/helpers";
+import ListButton from "@/ui/ListButton";
 
 const filtered3Burgers = fakedb
   .filter((item) => item.category === "Burger")
@@ -29,24 +30,30 @@ function BestSellersBurgers() {
 
         <ul className="flex flex-col justify-center gap-2 sm:flex-row sm:gap-5">
           {filtered3Burgers.map((item) => (
-            <li
+            // <li
+            //   key={item.id}
+            //   onClick={() => handleTabChange(item.id)}
+            //   className={`${activeTab === item.id ? "text-stone-900" : "text-primary-500"} relative flex px-5 py-2 text-center font-bold sm:text-start`}
+            // >
+            //   {item.id === activeTab ? (
+            //     <motion.div
+            //       className="absolute inset-0 z-0 flex rounded-lg bg-primary-600"
+            //       layoutId="activeTab"
+            //     />
+            //   ) : null}
+
+            //   <p
+            //     className={`relative z-10 flex-1 rounded-full duration-300 hover:cursor-pointer sm:border-orange-500`}
+            //   >
+            //     {item.name}
+            //   </p>
+            // </li>
+            <ListButton
               key={item.id}
               onClick={() => handleTabChange(item.id)}
-              className={`${activeTab === item.id ? "text-stone-900" : "text-primary-500"} relative flex px-5 py-2 text-center font-bold sm:text-start`}
-            >
-              {item.id === activeTab ? (
-                <motion.div
-                  className="absolute inset-0 z-0 flex rounded-lg bg-primary-600"
-                  layoutId="activeTab"
-                />
-              ) : null}
-
-              <p
-                className={`relative z-10 flex-1 rounded-full duration-300 hover:cursor-pointer sm:border-orange-500`}
-              >
-                {item.name}
-              </p>
-            </li>
+              activeTab={activeTab}
+              item={item}
+            />
           ))}
         </ul>
 

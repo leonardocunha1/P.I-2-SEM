@@ -31,7 +31,7 @@
   },
   {
     "id": 4,
-    "name": "Eggcellent Burgers",
+    "name": "Excellent Burgers",
     "image": "images/burgers/Burger4.png",
     "category": "Burger",
     "description": "Pão, carne, queijo, ovo, alface, tomate, maionese",
@@ -92,7 +92,7 @@
   {
     "id": 10,
     "name": "Refrigerante",
-    "image": "images/bebidas/Bebida1.png",
+    "image": "images/bebidas/refrigerante.png",
     "category": "Bebida",
     "description": "Lata de refrigerante (Coca-Cola, Pepsi, Guaraná)",
     "tipo": "Refrescante e delicioso.",
@@ -102,47 +102,47 @@
   {
     "id": 11,
     "name": "Suco Natural",
-    "image": "images/bebidas/Bebida2.png",
+    "image": "images/bebidas/suco.png",
     "category": "Bebida",
     "description": "Suco natural de laranja, limão ou morango",
     "tipo": "Opção saudável e refrescante.",
-    "sizes": ["150ml", "300ml", "500ml", "700ml"],
+    "sizes": ["300ml", "500ml", "700ml"],
     "price": [7.0, 10.0, 12.0]
   },
   {
     "id": 12,
     "name": "Milkshake",
-    "image": "images/bebidas/Bebida3.png",
-    "category": "Bebida",
+    "image": "images/sobremesas/milkshake.png",
+    "category": "Sobremesa",
     "description": "Milkshake de baunilha, chocolate ou morango",
     "tipo": "Uma sobremesa em forma de bebida, perfeita para acompanhar seu lanche.",
-    "sizes": ["150ml", "300ml", "500ml", "700ml"],
+    "sizes": ["300ml", "500ml", "700ml"],
     "price": [10.0, 15.0, 18.0]
   },
   {
     "id": 13,
     "name": "Cerveja Artesanal",
-    "image": "images/bebidas/Bebida4.png",
+    "image": "images/bebidas/cervejaartesanal.png",
     "category": "Bebida",
     "description": "Cerveja artesanal IPA, Lager ou Stout",
     "tipo": "Perfeita para acompanhar seu hambúrguer gourmet.",
-    "sizes": ["150ml", "300ml", "500ml", "700ml"],
+    "sizes": ["300ml", "500ml", "700ml"],
     "price": [12.0, 18.0, 22.0]
   },
   {
     "id": 14,
-    "name": "Sorvete",
-    "image": "images/sobremesas/Sobremesa1.png",
+    "name": "Frapuccino",
+    "image": "images/sobremesas/frapuccino.png",
     "category": "Sobremesa",
-    "description": "Sorvete de baunilha, chocolate ou morango",
+    "description": "Frapuccino de café, chocolate ou caramelo",
     "tipo": "A sobremesa perfeita para finalizar sua refeição.",
     "sizes": ["Pote (P)", "Pote (M)", "Pote (G)"],
     "price": [8.0, 12.0, 16.0]
   },
   {
     "id": 15,
-    "name": "Brownie",
-    "image": "images/sobremesas/Sobremesa2.png",
+    "name": "Sorvete",
+    "image": "images/sobremesas/sorvete.png",
     "category": "Sobremesa",
     "description": "Brownie de chocolate com sorvete",
     "tipo": "Deliciosamente doce e perfeito para os chocólatras.",
@@ -151,22 +151,23 @@
   },
   {
     "id": 16,
-    "name": "Cheesecake",
-    "image": "images/sobremesas/Sobremesa3.png",
-    "category": "Sobremesa",
-    "description": "Cheesecake de frutas vermelhas",
-    "tipo": "Leve, doce e irresistível.",
-    "sizes": ["Pote (P)", "Pote (M)", "Pote (G)"],
-    "price": [12.0, 18.0, 24.0]
+    "name": "Batida de Frutas",
+    "image": "images/bebidas/batida.png",
+    "category": "Bebida",
+    "description": "Batida de frutas com vodka, rum ou tequila"
   },
   {
     "id": 17,
-    "name": "Tiramisu",
-    "image": "images/sobremesas/Sobremesa4.png",
-    "category": "Sobremesa",
-    "description": "Tiramisu tradicional com café e mascarpone",
-    "tipo": "Uma clássica sobremesa italiana para um final de refeição perfeito.",
-    "sizes": ["Pote (P)", "Pote (M)", "Pote (G)"],
-    "price": [14.0, 20.0, 26.0]
+    "name": "Cerveja",
+    "image": "images/bebidas/cerveja.png",
+    "category": "Bebida",
+    "description": "Long-neck de cerveja (Heineken, Stella, Colorado)"
+  },
+  {
+    "id": 18,
+    "name": "Água",
+    "image": "images/bebidas/agua.png",
+    "category": "Bebida",
+    "description": "Garrafa de água mineral (com ou sem gás)"
   }
 ]

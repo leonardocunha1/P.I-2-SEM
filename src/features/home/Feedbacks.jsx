@@ -9,17 +9,17 @@ const fakeComments = [
   {
     name: "João",
     description: "A melhor hamburgueria da cidade!",
-    image_url: "/images/pessoas/user-1.jpg",
+    image_url: "/images/img-home/pessoas/user-1.jpg",
   },
   {
     name: "Maria",
     description: "O atendimento é excelente!",
-    image_url: "/images/pessoas/user-2.jpg",
+    image_url: "/images/img-home/pessoas/user-2.jpg",
   },
   {
     name: "José",
     description: "Os lanches são maravilhosos!",
-    image_url: "/images/pessoas/user-3.jpg",
+    image_url: "/images/img-home/pessoas/user-3.jpg",
   },
 ];
 

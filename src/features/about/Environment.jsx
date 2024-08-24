@@ -1,7 +1,7 @@
 import TextMd from "@/ui/TextMd";
-import ImgAmbiente from "/images/restaurante/ambiente.png";
-import ImgExerna from "/images/restaurante/externa.png";
-import ImgFachada from "/images/restaurante/fachada.jpg";
+import ImgAmbiente from "/images/img-about/restaurante/ambiente.png";
+import ImgExerna from "/images/img-about/restaurante/externa.png";
+import ImgFachada from "/images/img-about/restaurante/fachada.jpg";
 
 import { motion } from "framer-motion";
 
