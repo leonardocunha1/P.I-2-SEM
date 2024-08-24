@@ -48,7 +48,7 @@ function OrderList({ activeTab, currentPage, setCurrentPage }) {
               lg={4}
               className="flex justify-center"
             >
-              <li className="flex w-full flex-col items-center rounded-lg border-b border-gray-200 p-3 pt-5">
+              <li className="flex w-full flex-col rounded-lg border-b border-gray-200 p-3 pt-5">
                 <img
                   src={item.image}
                   alt={item.name}
@@ -60,7 +60,7 @@ function OrderList({ activeTab, currentPage, setCurrentPage }) {
                   </h3>
                   <p className="text-sm text-gray-500">{item.description}</p>
                 </div>
-                <div className="mt-auto flex gap-2">
+                <div className="mt-auto flex justify-between gap-2">
                   <p className="mt-2 font-semibold text-stone-900">
                     {formatCurrency(item.price[0])}
                   </p>
