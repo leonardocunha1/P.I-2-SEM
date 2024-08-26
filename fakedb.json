@@ -6,8 +6,7 @@
     "category": "Burger",
     "description": "Pão de brioche, hambúrguer de angus, queijo cheddar, bacon crocante, cebola crispy, alface, tomate, maionese de alho",
     "tipo": "Um hambúrguer digno dos paladares mais exigentes, uma verdadeira obra-prima.",
-    "sizes": ["apenas lanche", "combo (P)", "combo (M)", "combo (G)"],
-    "price": [28.0, 32.0, 35.0, 38.0]
+    "price": 28
   },
   {
     "id": 2,
@@ -16,8 +15,7 @@
     "category": "Burger",
     "description": "Pão artesanal, carne, queijo, bacon, ovo, presunto, alface, tomate, cebola caramelizada, molho especial",
     "tipo": "Um delicioso hambúrguer para os gostos mais refinados e para os amantes de lanches artesanais.",
-    "sizes": ["apenas lanche", "combo (P)", "combo (M)", "combo (G)"],
-    "price": [25.0, 29.0, 32.0, 35.0]
+    "price": 25
   },
   {
     "id": 3,
@@ -26,8 +24,7 @@
     "category": "Burger",
     "description": "Pão, carne, queijo, bacon, alface, tomate, maionese",
     "tipo": "Para os apaixonados por bacon, uma explosão de sabor.",
-    "sizes": ["apenas lanche", "combo (P)", "combo (M)", "combo (G)"],
-    "price": [18.2, 22.2, 25.2, 28.2]
+    "price": 18
   },
   {
     "id": 4,
@@ -36,8 +33,7 @@
     "category": "Burger",
     "description": "Pão, carne, queijo, ovo, alface, tomate, maionese",
     "tipo": "Perfeito para os amantes de ovos e lanches substanciais.",
-    "sizes": ["apenas lanche", "combo (P)", "combo (M)", "combo (G)"],
-    "price": [16.8, 20.8, 23.8, 26.8]
+    "price": 20
   },
   {
     "id": 5,
@@ -46,8 +42,7 @@
     "category": "Burger",
     "description": "Pão, carne, queijo, bacon, ovo, alface, tomate, maionese, milho, ervilha, batata palha",
     "tipo": "Para os que querem tudo em um só lanche, uma experiência completa.",
-    "sizes": ["apenas lanche", "combo (P)", "combo (M)", "combo (G)"],
-    "price": [20.3, 24.3, 27.3, 30.3]
+    "price": 21
   },
   {
     "id": 6,
@@ -56,8 +51,7 @@
     "category": "Burger",
     "description": "Pão, filé de frango, queijo, alface, tomate, maionese",
     "tipo": "Leve e saboroso, perfeito para os amantes de frango.",
-    "sizes": ["apenas lanche", "combo (P)", "combo (M)", "combo (G)"],
-    "price": [18.5, 22.5, 25.5, 28.5]
+    "price": 25
   },
   {
     "id": 7,
@@ -66,8 +60,7 @@
     "category": "Burger",
     "description": "Pão integral, hambúrguer vegano, queijo vegano, alface, tomate, cebola roxa, maionese vegana",
     "tipo": "Uma opção deliciosa e sustentável para os vegetarianos.",
-    "sizes": ["apenas lanche", "combo (P)", "combo (M)", "combo (G)"],
-    "price": [19.0, 23.0, 26.0, 29.0]
+    "price": 27
   },
   {
     "id": 8,
@@ -76,8 +69,7 @@
     "category": "Burger",
     "description": "Pão, hambúrguer de picanha, queijo, bacon, alface, tomate, maionese",
     "tipo": "Para os amantes de carnes nobres, uma experiência única.",
-    "sizes": ["apenas lanche", "combo (P)", "combo (M)", "combo (G)"],
-    "price": [22.5, 26.5, 29.5, 32.5]
+    "price": 30
   },
   {
     "id": 9,
@@ -86,8 +78,7 @@
     "category": "Burger",
     "description": "Pão, carne, queijo, alface, tomate, maionese",
     "tipo": "Um clássico irresistível para qualquer ocasião.",
-    "sizes": ["apenas lanche", "combo (P)", "combo (M)", "combo (G)"],
-    "price": [15.9, 19.9, 22.9, 25.9]
+    "price": 25
   },
   {
     "id": 10,
@@ -96,8 +87,7 @@
     "category": "Bebida",
     "description": "Lata de refrigerante (Coca-Cola, Pepsi, Guaraná)",
     "tipo": "Refrescante e delicioso.",
-    "sizes": ["150ml", "300ml", "500ml", "700ml"],
-    "price": [5.0, 7.0, 9.0]
+    "price": 5
   },
   {
     "id": 11,
@@ -106,8 +96,7 @@
     "category": "Bebida",
     "description": "Suco natural de laranja, limão ou morango",
     "tipo": "Opção saudável e refrescante.",
-    "sizes": ["300ml", "500ml", "700ml"],
-    "price": [7.0, 10.0, 12.0]
+    "price": 7
   },
   {
     "id": 12,
@@ -116,8 +105,7 @@
     "category": "Sobremesa",
     "description": "Milkshake de baunilha, chocolate ou morango",
     "tipo": "Uma sobremesa em forma de bebida, perfeita para acompanhar seu lanche.",
-    "sizes": ["300ml", "500ml", "700ml"],
-    "price": [10.0, 15.0, 18.0]
+    "price": 10
   },
   {
     "id": 13,
@@ -126,8 +114,7 @@
     "category": "Bebida",
     "description": "Cerveja artesanal IPA, Lager ou Stout",
     "tipo": "Perfeita para acompanhar seu hambúrguer gourmet.",
-    "sizes": ["300ml", "500ml", "700ml"],
-    "price": [12.0, 18.0, 22.0]
+    "price": 15
   },
   {
     "id": 14,
@@ -136,8 +123,7 @@
     "category": "Sobremesa",
     "description": "Frapuccino de café, chocolate ou caramelo",
     "tipo": "A sobremesa perfeita para finalizar sua refeição.",
-    "sizes": ["Pote (P)", "Pote (M)", "Pote (G)"],
-    "price": [8.0, 12.0, 16.0]
+    "price": 12
   },
   {
     "id": 15,
@@ -146,28 +132,22 @@
     "category": "Sobremesa",
     "description": "Brownie de chocolate com sorvete",
     "tipo": "Deliciosamente doce e perfeito para os chocólatras.",
-    "sizes": ["Pote (P)", "Pote (M)", "Pote (G)"],
-    "price": [10.0, 15.0, 20.0]
-  },
-  {
-    "id": 16,
-    "name": "Batida de Frutas",
-    "image": "images/bebidas/batida.png",
-    "category": "Bebida",
-    "description": "Batida de frutas com vodka, rum ou tequila"
+    "price": 9
   },
   {
     "id": 17,
     "name": "Cerveja",
     "image": "images/bebidas/cerveja.png",
     "category": "Bebida",
-    "description": "Long-neck de cerveja (Heineken, Stella, Colorado)"
+    "description": "Long-neck de cerveja (Heineken, Stella, Colorado)",
+    "price": 10
   },
   {
     "id": 18,
     "name": "Água",
     "image": "images/bebidas/agua.png",
     "category": "Bebida",
-    "description": "Garrafa de água mineral (com ou sem gás)"
+    "description": "Garrafa de água mineral (com ou sem gás)",
+    "price": 4
   }
 ]

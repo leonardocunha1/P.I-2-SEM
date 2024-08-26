@@ -12,7 +12,7 @@ function OrderPagination({ currentPage, totalPages, onPageChange, children }) {
   };
 
   return (
-    <div className="mt-auto flex flex-col items-center justify-between gap-4 pt-4 sm:flex-row sm:gap-0">
+    <div className="mt-auto flex pt-4">
       <div className="flex items-center gap-2 font-semibold">
         <button
           className="h-8 w-8"

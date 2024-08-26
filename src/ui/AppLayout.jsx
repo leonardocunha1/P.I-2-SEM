@@ -1,6 +1,7 @@
 import { Link, Outlet } from "react-router-dom";
 
 import { FaWhatsapp } from "react-icons/fa";
+import { FaCartShopping } from "react-icons/fa6";
 
 import Logo from "./Logo";
 import MenuItens from "./MenuItems";
@@ -15,18 +16,23 @@ function AppLayout() {
           <Logo />
           <MenuItens />
           {/* A LÓGICA AQUI VAI MUDAR, SE O USUÁRIO TIVER LOGADO VAI MOSTAR O NOME DELE, SE NÃO TIVER VAI MOSTRAR O LOGIN */}
-          <motion.div
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            className="hidden sm:block"
-          >
-            <Link
-              to="/home"
-              className="rounded-xl bg-primary-600 px-4 py-2 text-base font-bold tracking-wide text-primary-50 duration-500 hover:bg-red-900"
-            >
-              Login
+          <div className="order-2 flex items-center sm:order-3">
+            <Link to="/cart" className="mr-4 text-stone-50">
+              <FaCartShopping className="h-6 w-6 text-primary-100 duration-200 hover:text-primary-200" />
             </Link>
-          </motion.div>
+            <motion.div
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="hidden sm:block"
+            >
+              <Link
+                to="/home"
+                className="rounded-xl bg-primary-600 px-4 py-2 text-base font-bold tracking-wide text-primary-50 duration-500 hover:bg-red-900"
+              >
+                Login
+              </Link>
+            </motion.div>
+          </div>
         </div>
       </aside>
       <main className="relative z-0 flex flex-1 flex-col">

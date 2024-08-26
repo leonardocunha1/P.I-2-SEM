@@ -14,7 +14,7 @@ function MenuItens() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div>
+    <div className="order-3 sm:order-2">
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
         className="relative z-50 h-10 w-12 cursor-pointer rounded-full bg-white/0 transition-colors hover:scale-110 hover:bg-white/20 sm:hidden"
