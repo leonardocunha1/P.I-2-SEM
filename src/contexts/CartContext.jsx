@@ -41,6 +41,15 @@ function reducer(state, action) {
         ...state,
         cart: [],
       };
+    case "cart/updateObservation":
+      return {
+        ...state,
+        cart: state.cart.map((item) =>
+          item.id === action.payload.id
+            ? { ...item, observation: action.payload.observation }
+            : item,
+        ),
+      };
 
     default:
       return state;

@@ -1,4 +1,5 @@
 import { useCart } from "@/contexts/CartContext";
+import ButtonOrderAndCart from "@/ui/ButtonOrderAndCart";
 import { formatCurrency } from "@/utils/helpers";
 
 function CartItem({ item }) {
@@ -25,8 +26,15 @@ function CartItem({ item }) {
     }
   }
 
+  function handleObservation(e) {
+    dispatch({
+      type: "cart/updateObservation",
+      payload: { id: item.id, observation: e.target.value },
+    });
+  }
+
   return (
-    <li className="flex items-center justify-between p-2">
+    <li className="flex flex-col gap-4 border-b py-4 sm:flex-row sm:items-center sm:justify-between sm:gap-0">
       <div className="flex items-center gap-3">
         <img src={item.image} alt={item.name} className="h-12 w-12" />
         <div>
@@ -43,21 +51,18 @@ function CartItem({ item }) {
           </div>
         </div>
       </div>
-      <div>
-        <button
-          className="rounded-full border border-stone-400 px-3 py-1 duration-200 hover:bg-stone-400"
-          onClick={handleRemoveDecrement}
-        >
-          -
-        </button>
-        <span className="px-3">{item.quantity}</span>
-        <button
-          className="rounded-full border border-stone-400 px-3 py-1 duration-200 hover:bg-stone-400"
-          onClick={handleIncrement}
-        >
-          +
-        </button>
-      </div>
+      <input
+        type="text"
+        placeholder="Observações"
+        defaultValue={item.observation}
+        className="rounded-md border border-stone-300 px-2 py-1 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-500"
+        onChange={handleObservation}
+      />
+      <ButtonOrderAndCart
+        item={item}
+        handleIncrement={handleIncrement}
+        handleRemoveDecrement={handleRemoveDecrement}
+      />
     </li>
   );
 }

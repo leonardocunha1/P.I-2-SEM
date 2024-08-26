@@ -37,7 +37,7 @@ function Order() {
   }
 
   return (
-    <section className="relative flex min-h-[calc(100dvh-112px)] bg-stone-200 px-5 py-10">
+    <section className="relative flex min-h-[calc(100dvh-112px)] bg-primary-50 px-5 py-10">
       <div className="flex w-full flex-col">
         <TextMd label="Cardápio" />
         <div className="flex flex-1 flex-col">
@@ -48,6 +48,7 @@ function Order() {
           />
 
           <OrderList
+            menu={menu}
             activeTab={activeTab}
             currentPage={currentPage}
             setCurrentPage={setCurrentPage}

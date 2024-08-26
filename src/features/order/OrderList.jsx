@@ -5,24 +5,29 @@ import OrderPagination from "./OrderPagination";
 import OrderItem from "./OrderItem";
 
 // No componente OrdersMenu, poderia utilizar o useSearchParams para settar o valor da categoria e aqui no OrderList fazer um get, porém o intuito aqui é deixar o projeto mais simples e compreensível para todos.
-const burgers = fakeDB.filter((item) => item.category === "Burger");
-const sobremesas = fakeDB.filter((item) => item.category === "Sobremesa");
-const bebidas = fakeDB.filter((item) => item.category === "Bebida");
-const listOrdered = [...burgers, ...sobremesas, ...bebidas];
+// const burgers = fakeDB.filter((item) => item.category === "Burger");
+// const sobremesas = fakeDB.filter((item) => item.category === "Sobremesa");
+// const bebidas = fakeDB.filter((item) => item.category === "Bebida");
+// const listOrdered = [...burgers, ...sobremesas, ...bebidas];
 
-function OrderList({ activeTab, currentPage, setCurrentPage }) {
+function OrderList({ activeTab, currentPage, setCurrentPage, menu }) {
+  // Filtrando os itens de acordo com a categoria
   let listActive;
 
-  if (activeTab === 0) {
-    listActive = listOrdered;
-  } else if (activeTab === 1) {
-    listActive = burgers;
-  } else if (activeTab === 2) {
-    listActive = sobremesas;
-  } else if (activeTab === 3) {
-    listActive = bebidas;
+  if (activeTab === menu[0].id) {
+    const burgers = fakeDB.filter((item) => item.category === "Burger");
+    const sobremesas = fakeDB.filter((item) => item.category === "Sobremesa");
+    const bebidas = fakeDB.filter((item) => item.category === "Bebida");
+    listActive = [...burgers, ...sobremesas, ...bebidas];
+  } else if (activeTab === menu[1].id) {
+    listActive = fakeDB.filter((item) => item.category === "Burger");
+  } else if (activeTab === menu[2].id) {
+    listActive = fakeDB.filter((item) => item.category === "Sobremesa");
+  } else if (activeTab === menu[3].id) {
+    listActive = fakeDB.filter((item) => item.category === "Bebida");
   }
 
+  // Paginação
   const itemsPerPage = 8;
   const totalPages = Math.ceil(listActive.length / itemsPerPage);
 

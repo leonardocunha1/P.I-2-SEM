@@ -2,6 +2,8 @@ import Grid from "@mui/material/Unstable_Grid2";
 import { MdAddShoppingCart } from "react-icons/md";
 import { formatCurrency } from "@/utils/helpers";
 import { useCart } from "@/contexts/CartContext";
+import ButtonOrderAndCart from "@/ui/ButtonOrderAndCart";
+import { toast } from "react-toastify";
 
 function OrderItem({ item }) {
   const { cart, dispatch } = useCart();
@@ -17,7 +19,13 @@ function OrderItem({ item }) {
         price: item.price,
         image: item.image,
         quantity: 1,
+        observation: "",
       },
+    });
+    toast.success("Produto adicionado ao carrinho", {
+      autoClose: 1000,
+      theme: "colored",
+      pauseOnFocusLoss: false,
     });
   }
 
@@ -60,21 +68,11 @@ function OrderItem({ item }) {
           </p>
 
           {itemInCart ? (
-            <div>
-              <button
-                className="rounded-full border border-stone-400 px-3 py-1 duration-200 hover:bg-stone-400"
-                onClick={handleRemoveDecrement}
-              >
-                -
-              </button>
-              <span className="px-3">{itemInCart.quantity}</span>
-              <button
-                className="rounded-full border border-stone-400 px-3 py-1 duration-200 hover:bg-stone-400"
-                onClick={handleIncrement}
-              >
-                +
-              </button>
-            </div>
+            <ButtonOrderAndCart
+              item={itemInCart}
+              handleIncrement={handleIncrement}
+              handleRemoveDecrement={handleRemoveDecrement}
+            />
           ) : (
             <button
               className="flex w-36 items-center justify-center gap-2 rounded-full border border-stone-400 px-3 py-1 duration-200 hover:bg-stone-400"
