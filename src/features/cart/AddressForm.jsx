@@ -1,15 +1,42 @@
-// components/AddressForm.js
+import { fetchCepData } from "@/utils/data-services";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import ClipLoader from "react-spinners/ClipLoader";
 
-function AddressForm({ onSubmit, isLoading, errors, register }) {
-  const override = {
-    display: "block",
-    margin: "0 auto",
-  };
+const override = {
+  display: "block",
+  margin: "0 auto",
+};
+
+function AddressForm({ setCepError, setCepData, setShowInputs }) {
+  const [isLoading, setIsLoading] = useState(false);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  async function onSubmit({ cep, numero }) {
+    setIsLoading(true);
+    const { endereco, error } = await fetchCepData(cep, numero);
+    setIsLoading(false);
+    if (error) {
+      setCepError(error);
+      setCepData(null);
+      setShowInputs(true); // Mostrar inputs em caso de erro
+    } else {
+      setCepData(endereco);
+      setCepError(null);
+      setShowInputs(false); // Ocultar inputs após sucesso
+    }
+  }
 
   return (
-    <form className="mt-4 flex flex-col gap-4" onSubmit={onSubmit}>
+    <form
+      className="mt-4 flex flex-col gap-4"
+      onSubmit={handleSubmit(onSubmit)}
+    >
       <div className="flex flex-col gap-2">
         <label htmlFor="cep" className="text-sm font-semibold text-stone-700">
           CEP

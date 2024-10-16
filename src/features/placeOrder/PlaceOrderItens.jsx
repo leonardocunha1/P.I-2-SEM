@@ -1,8 +1,8 @@
 import fakeDB from "../../../fakedb.json";
 
 import Grid from "@mui/material/Unstable_Grid2";
-import OrderPagination from "./OrderPagination";
-import OrderItem from "./OrderItem";
+import OrderPagination from "./PlaceOrderPagination";
+import PlaceOrderItem from "./PlaceOrderItem";
 
 // No componente OrdersMenu, poderia utilizar o useSearchParams para settar o valor da categoria e aqui no OrderList fazer um get, porém o intuito aqui é deixar o projeto mais simples e compreensível para todos.
 // const burgers = fakeDB.filter((item) => item.category === "Burger");
@@ -10,20 +10,25 @@ import OrderItem from "./OrderItem";
 // const bebidas = fakeDB.filter((item) => item.category === "Bebida");
 // const listOrdered = [...burgers, ...sobremesas, ...bebidas];
 
-function OrderList({ activeTab, currentPage, setCurrentPage, menu }) {
+function PlaceOrderItens({
+  activeTab,
+  currentPage,
+  setCurrentPage,
+  tabOptions,
+}) {
   // Filtrando os itens de acordo com a categoria
   let listActive;
 
-  if (activeTab === menu[0].id) {
+  if (activeTab === tabOptions[0].id) {
     const burgers = fakeDB.filter((item) => item.category === "Burger");
     const sobremesas = fakeDB.filter((item) => item.category === "Sobremesa");
     const bebidas = fakeDB.filter((item) => item.category === "Bebida");
     listActive = [...burgers, ...sobremesas, ...bebidas];
-  } else if (activeTab === menu[1].id) {
+  } else if (activeTab === tabOptions[1].id) {
     listActive = fakeDB.filter((item) => item.category === "Burger");
-  } else if (activeTab === menu[2].id) {
+  } else if (activeTab === tabOptions[2].id) {
     listActive = fakeDB.filter((item) => item.category === "Sobremesa");
-  } else if (activeTab === menu[3].id) {
+  } else if (activeTab === tabOptions[3].id) {
     listActive = fakeDB.filter((item) => item.category === "Bebida");
   }
 
@@ -45,7 +50,7 @@ function OrderList({ activeTab, currentPage, setCurrentPage, menu }) {
           columns={{ xs: 4, sm: 8, md: 12, lg: 16 }}
         >
           {currentItems.map((item) => (
-            <OrderItem key={item.id} item={item} />
+            <PlaceOrderItem key={item.id} item={item} />
           ))}
         </Grid>
       </ul>
@@ -60,4 +65,4 @@ function OrderList({ activeTab, currentPage, setCurrentPage, menu }) {
   );
 }
 
-export default OrderList;
+export default PlaceOrderItens;

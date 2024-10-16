@@ -1,11 +1,11 @@
-import ListButton from "@/ui/ListButton";
+import TabItem from "@/ui/TabItem";
 
-function OrderMenu({ menu, onTabChange, activeTab }) {
+function PlaceOrderTabCategory({ tabOptions, onTabChange, activeTab }) {
   return (
     <aside>
       <ul className="flex flex-col justify-center gap-2 sm:flex-row sm:gap-5">
-        {menu.map((item) => (
-          <ListButton
+        {tabOptions.map((item) => (
+          <TabItem
             key={item.id}
             item={item}
             activeTab={activeTab}
@@ -17,4 +17,4 @@ function OrderMenu({ menu, onTabChange, activeTab }) {
   );
 }
 
-export default OrderMenu;
+export default PlaceOrderTabCategory;

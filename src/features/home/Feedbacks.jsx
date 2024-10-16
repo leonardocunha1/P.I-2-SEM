@@ -1,5 +1,5 @@
 import TextMd from "@/ui/TextMd";
-import Slider from "./Slider";
+import FeedbacksSlider from "./FeedbacksSlider";
 
 import { motion } from "framer-motion";
 
@@ -34,7 +34,7 @@ function Feedbacks() {
           transition={{ duration: 0.5, delay: 0.3 }}
         >
           <TextMd label="Feedbacks" />
-          <Slider comments={fakeComments} />
+          <FeedbacksSlider comments={fakeComments} />
         </motion.div>
       </div>
       <img src={ShapeBGTop} alt="Shape" className="absolute top-0" />

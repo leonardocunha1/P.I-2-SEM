@@ -1,11 +1,11 @@
 import { useState } from "react";
 
-import OrderList from "@/features/order/OrderList";
-import OrderMenu from "@/features/order/OrderMenu";
+import PlaceOrderItens from "@/features/placeOrder/PlaceOrderItens";
+import PlaceOrderTabCategory from "@/features/placeOrder/PlaceOrderTabCategory";
 
 import TextMd from "@/ui/TextMd";
 
-const menu = [
+const tabOptions = [
   {
     id: 0,
     name: "Todos",
@@ -25,7 +25,7 @@ const menu = [
 ];
 
 function Order() {
-  const [activeTab, setActiveTab] = useState(menu[0].id);
+  const [activeTab, setActiveTab] = useState(tabOptions[0].id);
   const [currentPage, setCurrentPage] = useState(1);
 
   function handleTabChange(tabId) {
@@ -41,14 +41,14 @@ function Order() {
       <div className="flex w-full flex-col">
         <TextMd label="Cardápio" />
         <div className="flex flex-1 flex-col">
-          <OrderMenu
-            menu={menu}
+          <PlaceOrderTabCategory
+            tabOptions={tabOptions}
             activeTab={activeTab}
             onTabChange={handleTabChange}
           />
 
-          <OrderList
-            menu={menu}
+          <PlaceOrderItens
+            tabOptions={tabOptions}
             activeTab={activeTab}
             currentPage={currentPage}
             setCurrentPage={setCurrentPage}

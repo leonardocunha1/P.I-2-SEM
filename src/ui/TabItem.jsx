@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-function ListButton({ onClick, activeTab, item }) {
+function TabItem({ onClick, activeTab, item }) {
   return (
     <li
       key={item.id}
@@ -23,4 +23,4 @@ function ListButton({ onClick, activeTab, item }) {
   );
 }
 
-export default ListButton;
+export default TabItem;

@@ -5,7 +5,7 @@ import { useCart } from "@/contexts/CartContext";
 import ButtonOrderAndCart from "@/ui/ButtonOrderAndCart";
 import { toast } from "react-toastify";
 
-function OrderItem({ item }) {
+function PlaceOrderItem({ item }) {
   const { cart, dispatch } = useCart();
 
   const itemInCart = cart.find((cartItem) => cartItem.id === item.id);
@@ -88,4 +88,4 @@ function OrderItem({ item }) {
   );
 }
 
-export default OrderItem;
+export default PlaceOrderItem;

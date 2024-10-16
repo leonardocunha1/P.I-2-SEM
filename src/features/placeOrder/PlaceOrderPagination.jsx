@@ -1,4 +1,9 @@
-function OrderPagination({ currentPage, totalPages, onPageChange, children }) {
+function PlaceOrderPagination({
+  currentPage,
+  totalPages,
+  onPageChange,
+  children,
+}) {
   const handlePreviousPage = () => {
     if (currentPage > 1) {
       onPageChange(currentPage - 1);
@@ -38,4 +43,4 @@ function OrderPagination({ currentPage, totalPages, onPageChange, children }) {
   );
 }
 
-export default OrderPagination;
+export default PlaceOrderPagination;

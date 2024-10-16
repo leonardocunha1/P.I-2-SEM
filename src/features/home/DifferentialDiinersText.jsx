@@ -1,4 +1,4 @@
-function BurgerText({ label, children }) {
+function DifferentialDiinersText({ label, children }) {
   return (
     <li className="text-justify">
       <span className="font-bold text-orange-600">{label}: </span>
@@ -7,4 +7,4 @@ function BurgerText({ label, children }) {
   );
 }
 
-export default BurgerText;
+export default DifferentialDiinersText;

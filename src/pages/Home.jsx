@@ -1,4 +1,4 @@
-import BurgerInfo from "@/features/home/BurgerInfo";
+import DifferentialDiiners from "@/features/home/DifferentialDiiners";
 import BestSellersBurgers from "@/features/home/BestSellersBurgers";
 import Hero from "@/features/home/Hero";
 import Feedbacks from "@/features/home/Feedbacks";
@@ -9,8 +9,7 @@ function Home() {
   return (
     <>
       <Hero />
-      {/* <MenuHome /> */}
-      <BurgerInfo />
+      <DifferentialDiiners />
       <BestSellersBurgers />
       <Feedbacks />
       <Location />
