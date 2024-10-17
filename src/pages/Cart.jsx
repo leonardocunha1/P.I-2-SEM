@@ -29,6 +29,19 @@ function Cart() {
     setShowInputs(true); // Mostrar inputs ao resetar
   }
 
+  function finalizarPedido() {
+    const order = {
+      cart,
+      totalOrder,
+      isDelivery,
+      cepData,
+      valorEntrega,
+      paymentMethod,
+    };
+
+    console.log(order);
+  }
+
   return (
     <section className="relative flex-1 bg-stone-50 px-5 py-10">
       {cart.length === 0 ? (
@@ -36,11 +49,13 @@ function Cart() {
       ) : (
         <div className="mx-auto max-w-3xl rounded-lg bg-white px-6 py-8">
           <TextMd label="Carrinho" />
+
           <ul>
             {cart.map((item) => (
               <CartItem key={item.id} item={item} />
             ))}
           </ul>
+
           <div className="mt-4 space-y-2">
             <PaymentMethod
               setPaymentMethod={setPaymentMethod}
@@ -51,6 +66,7 @@ function Cart() {
               <label htmlFor="delivery">
                 Entrega ({formatCurrency(valorEntrega)})
               </label>
+
               <input
                 type="checkbox"
                 id="delivery"
@@ -97,11 +113,13 @@ function Cart() {
               width: "100%",
               fontFamily: "Calistoga",
               letterSpacing: "2px",
+              marginTop: "20px",
               "&:hover": {
                 backgroundColor: "#d16025",
                 color: "#fdf7ef",
               },
             }}
+            onClick={finalizarPedido}
           >
             Finalizar Pedido
           </Button>

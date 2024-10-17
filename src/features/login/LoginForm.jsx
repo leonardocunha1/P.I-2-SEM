@@ -1,20 +1,18 @@
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import ClipLoader from "react-spinners/ClipLoader";
-import { fetchCepData } from "@/utils/data-services";
 import TextField from "@mui/material/TextField";
 import { Button } from "@mui/material";
+import { Link } from "react-router-dom";
+import { useLogin } from "./useLogin";
 
-// Defina o esquema Zod para o formulário
-const addressSchema = z.object({
-  cep: z
+// Defina o esquema Zod para o formulário de login
+const loginSchema = z.object({
+  email: z.string().email({ message: "E-mail inválido" }),
+  password: z
     .string()
-    .min(8, { message: "CEP deve ter 8 dígitos" })
-    .max(8, { message: "CEP deve ter 8 dígitos" })
-    .regex(/^[0-9]{8}$/, { message: "CEP inválido" }),
-  numero: z.string().nonempty("Campo Obrigatório"),
+    .min(6, { message: "Senha deve ter no mínimo 6 caracteres" }),
 });
 
 // Configurações de estilo para o ClipLoader
@@ -41,58 +39,47 @@ const styleTextField = {
   },
 };
 
-function AddressForm({ setCepError, setCepData, setShowInputs }) {
-  // State que controla o estado de carregamento da requisição do CEP
-  const [isLoading, setIsLoading] = useState(false);
+function LoginForm() {
+  const { login, isPending } = useLogin();
 
-  // Use `zodResolver` para integrar Zod ao react-hook-form
   const {
     handleSubmit,
     formState: { errors },
     control,
   } = useForm({
-    resolver: zodResolver(addressSchema),
+    resolver: zodResolver(loginSchema),
   });
 
-  // Função que é chamada quando o formulário é submetido
-  async function onSubmit({ cep, numero }) {
-    setIsLoading(true);
-    // Fazer a requisição para a API de CEP
-    const { endereco, error } = await fetchCepData(cep, numero);
-    setIsLoading(false);
-
-    // Atualizar o estado do componente pai
-    // Se houver erro, exibir mensagem de erro e mostrar os inputs
-    if (error) {
-      setCepError(error);
-      setCepData(null);
-    } else {
-      setCepData(endereco);
-      setCepError(null);
-      setShowInputs(false); // Ocultar inputs após sucesso na requisição
-    }
-  }
+  // Função que é chamada quando o formulário de login é submetido
+  const onSubmit = ({ email, password }) => {
+    login({
+      email,
+      senha: password,
+    });
+  };
 
   return (
     <form
-      className="mt-4 flex flex-col gap-4"
+      className="mx-3 mt-4 flex w-full max-w-xl flex-col gap-4 rounded-lg bg-primary-50 p-4"
       onSubmit={handleSubmit(onSubmit)}
     >
+      <h3 className="text-center text-2xl font-bold uppercase tracking-widest">
+        Login
+      </h3>
       <Controller
-        name="cep"
+        name="email"
         control={control}
         defaultValue=""
         render={({ field }) => (
           <TextField
             {...field}
-            label="CEP"
+            label="E-mail"
             variant="outlined"
             fullWidth
-            inputProps={{ maxLength: 8 }}
-            error={!!errors.cep} // Definir erro com base no estado do formulário
+            error={!!errors.email} // Definir erro com base no estado do formulário
             helperText={
-              errors.cep ? errors.cep.message : "Por favor, digite seu CEP"
-            } // Exibir mensagem de erro ou de ajuda
+              errors.email ? errors.email.message : "Digite seu e-mail"
+            }
             size="small"
             sx={styleTextField}
           />
@@ -100,26 +87,29 @@ function AddressForm({ setCepError, setCepData, setShowInputs }) {
       />
 
       <Controller
-        name="numero"
+        name="password"
         control={control}
         defaultValue=""
         render={({ field }) => (
           <TextField
             {...field}
-            label="Número"
+            label="Senha"
+            type="password"
             variant="outlined"
             fullWidth
-            error={!!errors.numero} // Definir erro com base no estado do formulário
+            error={!!errors.password} // Definir erro com base no estado do formulário
             helperText={
-              errors.numero
-                ? errors.numero.message
-                : "Por favor, digite o número"
-            } // Exibir mensagem de erro ou de ajuda
+              errors.password ? errors.password.message : "Digite sua senha"
+            }
             size="small"
             sx={styleTextField}
           />
         )}
       />
+
+      <Link to="/register" className="text-center text-sm text-stone-800">
+        Não tem uma conta? <span className="underline">Registre-se</span>
+      </Link>
 
       <Button
         variant="contained"
@@ -138,14 +128,14 @@ function AddressForm({ setCepError, setCepData, setShowInputs }) {
           },
         }}
       >
-        {isLoading ? (
+        {isPending ? (
           <ClipLoader color="#fdf7ef" size={20} cssOverride={override} />
         ) : (
-          "Buscar"
+          "Entrar"
         )}
       </Button>
     </form>
   );
 }
 
-export default AddressForm;
+export default LoginForm;
