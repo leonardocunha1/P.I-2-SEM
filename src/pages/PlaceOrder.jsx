@@ -4,6 +4,7 @@ import PlaceOrderItens from "@/features/placeOrder/PlaceOrderItens";
 import PlaceOrderTabCategory from "@/features/placeOrder/PlaceOrderTabCategory";
 
 import TextMd from "@/ui/TextMd";
+import usePlaceOrderItems from "@/features/placeOrder/usePlaceOrderItems";
 
 const tabOptions = [
   {
@@ -27,6 +28,8 @@ const tabOptions = [
 function Order() {
   const [activeTab, setActiveTab] = useState(tabOptions[0].id);
   const [currentPage, setCurrentPage] = useState(1);
+  const { data, isLoading } = usePlaceOrderItems();
+  console.log(data);
 
   function handleTabChange(tabId) {
     setActiveTab(tabId);

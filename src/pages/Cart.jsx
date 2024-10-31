@@ -9,6 +9,9 @@ import PaymentMethod from "@/features/cart/PaymentMethod";
 import AddressSummary from "@/features/cart/AddressSumary";
 import TotalOrderDisplay from "@/features/cart/TotalOrderDisplay";
 import Button from "@mui/material/Button";
+import { useUser } from "@/contexts/UserContext";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 function Cart() {
   const [isDelivery, setIsDelivery] = useState(false);
@@ -16,7 +19,8 @@ function Cart() {
   const [cepData, setCepData] = useState(null);
   const [showInputs, setShowInputs] = useState(true);
   const [paymentMethod, setPaymentMethod] = useState("");
-
+  const navigate = useNavigate();
+  const { isLogged } = useUser();
   const { cart } = useCart();
   const valorEntrega = 8;
 
@@ -38,6 +42,10 @@ function Cart() {
       valorEntrega,
       paymentMethod,
     };
+
+    if (!isLogged) {
+      toast.error("Faça o login para finalizar o pedido");
+    }
 
     console.log(order);
   }
@@ -103,26 +111,49 @@ function Cart() {
             valorEntrega={valorEntrega}
           />
 
-          <Button
-            variant="contained"
-            size="small"
-            sx={{
-              backgroundColor: "#e0782f",
-              color: "#1a1a1a",
-              fontWeight: "bold",
-              width: "100%",
-              fontFamily: "Calistoga",
-              letterSpacing: "2px",
-              marginTop: "20px",
-              "&:hover": {
-                backgroundColor: "#d16025",
-                color: "#fdf7ef",
-              },
-            }}
-            onClick={finalizarPedido}
-          >
-            Finalizar Pedido
-          </Button>
+          {isLogged ? (
+            <Button
+              variant="contained"
+              size="small"
+              sx={{
+                backgroundColor: "#e0782f",
+                color: "#1a1a1a",
+                fontWeight: "bold",
+                width: "100%",
+                fontFamily: "Calistoga",
+                letterSpacing: "2px",
+                marginTop: "20px",
+                "&:hover": {
+                  backgroundColor: "#d16025",
+                  color: "#fdf7ef",
+                },
+              }}
+              onClick={finalizarPedido}
+            >
+              Finalizar Pedido
+            </Button>
+          ) : (
+            <Button
+              variant="contained"
+              size="small"
+              sx={{
+                backgroundColor: "#e0782f",
+                color: "#1a1a1a",
+                fontWeight: "bold",
+                width: "100%",
+                fontFamily: "Calistoga",
+                letterSpacing: "2px",
+                marginTop: "20px",
+                "&:hover": {
+                  backgroundColor: "#d16025",
+                  color: "#fdf7ef",
+                },
+              }}
+              onClick={() => navigate("/login")}
+            >
+              Faça o login para finalizar o pedido
+            </Button>
+          )}
         </div>
       )}
     </section>
