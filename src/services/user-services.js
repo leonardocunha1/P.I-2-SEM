@@ -5,9 +5,15 @@ export async function createUser(nome, email, senha, telefone) {
 
   // Verificar se o e-mail já está em uso
   try {
-    const response = await axios.post(apiURLVerificarEmail, {
-      email,
-    });
+    const response = await axios.post(
+      apiURLVerificarEmail,
+      {
+        email,
+      },
+      {
+        withCredentials: true, // Adicione isso para enviar cookies
+      },
+    );
     const { exists } = response.data;
     console.log(exists);
 
@@ -18,6 +24,7 @@ export async function createUser(nome, email, senha, telefone) {
       throw { erroEmail: "Este e-mail já está em uso!!" };
     }
   } catch (error) {
+    console.error("Erro ao verificar e-mail:", error);
     throw { message: error.erroEmail || "Erro ao verificar e-mail" };
   }
 
@@ -25,15 +32,22 @@ export async function createUser(nome, email, senha, telefone) {
 
   // Cadastrar o usuário
   try {
-    const response = await axios.post(apiURL, {
-      nome,
-      email,
-      telefone,
-      senha_cadastro: senha,
-    });
+    const response = await axios.post(
+      apiURL,
+      {
+        nome,
+        email,
+        telefone,
+        senha_cadastro: senha,
+      },
+      {
+        withCredentials: true, // Adicione isso para enviar cookies
+      },
+    );
 
     return response.data; // Retorna os dados do usuário, se necessário
   } catch (error) {
+    console.error("Erro ao cadastrar usuário:", error);
     throw {
       message: error.response?.data?.error || "Erro ao cadastrar usuário",
     };
@@ -45,10 +59,16 @@ export async function login(email, senha) {
 
   // Verificar se o e-mail e a senha estão corretos
   try {
-    const response = await axios.post(apiURL, {
-      email,
-      senha,
-    });
+    const response = await axios.post(
+      apiURL,
+      {
+        email,
+        senha,
+      },
+      {
+        withCredentials: true, // Adicione isso para enviar cookies
+      },
+    );
 
     // Se o e-mail e a senha não estiverem corretos:
     if (response.data.validacao !== true) {
@@ -65,9 +85,7 @@ export async function login(email, senha) {
       };
     }
 
-    // Se o login for bem-sucedido, busque os dados do usuário
-    const usuarioDados = await buscarDadosUsuario();
-    return { usuarioDados, message: "Login bem-sucedido" };
+    return { message: "Login bem-sucedido" };
   } catch (error) {
     console.error("Login error:", error);
     throw {
