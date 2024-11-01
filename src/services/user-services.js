@@ -94,15 +94,23 @@ export async function login(email, senha) {
   }
 }
 
-// Função para buscar os dados do usuário após o login
-export async function buscarDadosUsuario() {
-  const apiURL = `http://localhost:3000/buscar-dados-cliente`;
-
+export async function fetchPedidosCliente() {
+  const apiURL = `http://localhost:3000/buscar-pedidos-clientes`;
   try {
-    const response = await axios.post(apiURL, {}, { withCredentials: true });
+    const response = await axios.post(
+      apiURL,
+      {},
+      {
+        withCredentials: true, // Enviar cookies
+      },
+    );
+
     return response.data;
   } catch (error) {
-    console.error("Erro ao buscar dados do usuário:", error);
-    throw { message: "Erro ao buscar dados do usuário" };
+    console.error("Erro ao buscar pedidos do cliente:", error);
+    throw {
+      message:
+        error.response?.data?.error || "Erro ao buscar pedidos do cliente",
+    };
   }
 }

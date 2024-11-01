@@ -12,6 +12,7 @@ import Button from "@mui/material/Button";
 import { useUser } from "@/contexts/UserContext";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import useFinalizarCompra from "@/features/cart/useFinalizarCompra";
 
 function Cart() {
   const [isDelivery, setIsDelivery] = useState(false);
@@ -20,8 +21,9 @@ function Cart() {
   const [showInputs, setShowInputs] = useState(true);
   const [paymentMethod, setPaymentMethod] = useState("");
   const navigate = useNavigate();
-  const { isLogged } = useUser();
+  const { isLogged, user } = useUser();
   const { cart } = useCart();
+  const { finalizarCompra, isPending } = useFinalizarCompra();
   const valorEntrega = 8;
 
   const totalOrder = cart.reduce((acc, item) => {
@@ -34,20 +36,40 @@ function Cart() {
   }
 
   function finalizarPedido() {
+    let endereco = "";
+    if (isDelivery && cepData) {
+      endereco = `${cepData.logradouro}, ${cepData.bairro} - ${cepData.numero}, ${cepData.localidade} - ${cepData.uf}`;
+    }
+
     const order = {
       cart,
-      totalOrder,
       isDelivery,
-      cepData,
+      endereco,
       valorEntrega,
       paymentMethod,
+      idUser: user.id,
     };
+
+    console.log(cepData);
 
     if (!isLogged) {
       toast.error("Faça o login para finalizar o pedido");
+      return;
     }
 
-    console.log(order);
+    if (!paymentMethod) {
+      toast.error("Selecione o método de pagamento");
+      return;
+    }
+
+    if (isDelivery && !cepData) {
+      setCepError("Informe o CEP para entrega");
+      return;
+    }
+
+    // console.log(order);
+
+    finalizarCompra(order);
   }
 
   return (

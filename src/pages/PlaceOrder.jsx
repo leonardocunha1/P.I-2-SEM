@@ -5,6 +5,7 @@ import PlaceOrderTabCategory from "@/features/placeOrder/PlaceOrderTabCategory";
 
 import TextMd from "@/ui/TextMd";
 import usePlaceOrderItems from "@/features/placeOrder/usePlaceOrderItems";
+import { ClipLoader } from "react-spinners";
 
 const tabOptions = [
   {
@@ -24,6 +25,11 @@ const tabOptions = [
     name: "Bebidas",
   },
 ];
+
+const override = {
+  display: "block",
+  margin: "0 auto",
+};
 
 function Order() {
   const [activeTab, setActiveTab] = useState(tabOptions[0].id);
@@ -49,13 +55,19 @@ function Order() {
             activeTab={activeTab}
             onTabChange={handleTabChange}
           />
-
-          <PlaceOrderItens
-            tabOptions={tabOptions}
-            activeTab={activeTab}
-            currentPage={currentPage}
-            setCurrentPage={setCurrentPage}
-          />
+          {isLoading ? (
+            <div className="relative flex h-dvh flex-col overflow-x-hidden bg-primary-50 font-poppins2 text-sm text-stone-800">
+              <ClipLoader color="#fdf7ef" size={90} cssOverride={override} />
+            </div>
+          ) : (
+            <PlaceOrderItens
+              data={data}
+              tabOptions={tabOptions}
+              activeTab={activeTab}
+              currentPage={currentPage}
+              setCurrentPage={setCurrentPage}
+            />
+          )}
         </div>
       </div>
     </section>

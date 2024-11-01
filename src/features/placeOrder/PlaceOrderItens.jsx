@@ -1,16 +1,9 @@
-import fakeDB from "../../../fakedb.json";
-
 import Grid from "@mui/material/Unstable_Grid2";
 import OrderPagination from "./PlaceOrderPagination";
 import PlaceOrderItem from "./PlaceOrderItem";
 
-// No componente OrdersMenu, poderia utilizar o useSearchParams para settar o valor da categoria e aqui no OrderList fazer um get, porém o intuito aqui é deixar o projeto mais simples e compreensível para todos.
-// const burgers = fakeDB.filter((item) => item.category === "Burger");
-// const sobremesas = fakeDB.filter((item) => item.category === "Sobremesa");
-// const bebidas = fakeDB.filter((item) => item.category === "Bebida");
-// const listOrdered = [...burgers, ...sobremesas, ...bebidas];
-
 function PlaceOrderItens({
+  data,
   activeTab,
   currentPage,
   setCurrentPage,
@@ -20,16 +13,16 @@ function PlaceOrderItens({
   let listActive;
 
   if (activeTab === tabOptions[0].id) {
-    const burgers = fakeDB.filter((item) => item.category === "Burger");
-    const sobremesas = fakeDB.filter((item) => item.category === "Sobremesa");
-    const bebidas = fakeDB.filter((item) => item.category === "Bebida");
+    const burgers = data.filter((item) => item.classe === "Burger");
+    const sobremesas = data.filter((item) => item.classe === "Sobremesa");
+    const bebidas = data.filter((item) => item.classe === "Bebida");
     listActive = [...burgers, ...sobremesas, ...bebidas];
   } else if (activeTab === tabOptions[1].id) {
-    listActive = fakeDB.filter((item) => item.category === "Burger");
+    listActive = data.filter((item) => item.classe === "Burger");
   } else if (activeTab === tabOptions[2].id) {
-    listActive = fakeDB.filter((item) => item.category === "Sobremesa");
+    listActive = data.filter((item) => item.classe === "Sobremesa");
   } else if (activeTab === tabOptions[3].id) {
-    listActive = fakeDB.filter((item) => item.category === "Bebida");
+    listActive = data.filter((item) => item.classe === "Bebida");
   }
 
   // Paginação

@@ -18,7 +18,8 @@ function AppLayout() {
     <>
       {isLoading ? (
         <div className="relative flex h-dvh flex-col overflow-x-hidden bg-primary-50 font-poppins2 text-sm text-stone-800">
-          <ClipLoader color="#fdf7ef" size={90} cssOverride={override} />
+          {/* <ClipLoader color="#fdf7ef" size={90} cssOverride={override} /> */}
+          AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         </div>
       ) : (
         <div className="relative flex h-dvh flex-col overflow-x-hidden bg-primary-50 font-poppins2 text-sm text-stone-800">

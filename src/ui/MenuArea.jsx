@@ -7,8 +7,7 @@ import { motion } from "framer-motion";
 import { useUser } from "@/contexts/UserContext";
 
 function MenuArea() {
-  const {user, isLogged} = useUser()
-  console.log(user, isLogged)
+  const { user, isLogged } = useUser();
 
   return (
     <aside className="z-20 bg-stone-900 px-3 py-4">

@@ -9,8 +9,6 @@ const filtered3Burgers = fakedb
   .filter((item) => item.category === "Burger")
   .slice(0, 3);
 
-console.log(filtered3Burgers);
-
 function BestSellersBurgers() {
   const [activeTab, setActiveTab] = useState(filtered3Burgers[0].id);
 
