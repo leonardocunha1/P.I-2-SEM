@@ -9,6 +9,10 @@ import { ClipLoader } from "react-spinners";
 const override = {
   display: "block",
   margin: "0 auto",
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
 };
 
 function AppLayout() {
@@ -17,9 +21,8 @@ function AppLayout() {
   return (
     <>
       {isLoading ? (
-        <div className="relative flex h-dvh flex-col overflow-x-hidden bg-primary-50 font-poppins2 text-sm text-stone-800">
-          {/* <ClipLoader color="#fdf7ef" size={90} cssOverride={override} /> */}
-          AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        <div className="relative h-dvh bg-primary-50">
+          <ClipLoader color="#221f1a" size={90} cssOverride={override} />
         </div>
       ) : (
         <div className="relative flex h-dvh flex-col overflow-x-hidden bg-primary-50 font-poppins2 text-sm text-stone-800">

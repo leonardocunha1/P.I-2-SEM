@@ -94,6 +94,27 @@ export async function login(email, senha) {
   }
 }
 
+export async function logout() {
+  const apiURL = `http://localhost:3000/sair-conta`;
+
+  try {
+    const response = await axios.post(
+      apiURL,
+      {},
+      {
+        withCredentials: true,
+      },
+    );
+
+    return response.data;
+  } catch (error) {
+    console.error("Erro ao fazer logout:", error);
+    throw {
+      message: error.response?.data?.error || "Erro ao fazer logout",
+    };
+  }
+}
+
 export async function fetchPedidosCliente() {
   const apiURL = `http://localhost:3000/buscar-pedidos-clientes`;
   try {

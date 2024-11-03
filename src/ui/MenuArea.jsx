@@ -5,9 +5,12 @@ import { FaCartShopping } from "react-icons/fa6";
 
 import { motion } from "framer-motion";
 import { useUser } from "@/contexts/UserContext";
+import { MdOutlineLogout } from "react-icons/md";
+import { useLogout } from "@/features/login/useLogout";
 
 function MenuArea() {
-  const { user, isLogged } = useUser();
+  const { isLogged } = useUser();
+  const { logout } = useLogout();
 
   return (
     <aside className="z-20 bg-stone-900 px-3 py-4">
@@ -45,6 +48,12 @@ function MenuArea() {
               </Link>
             )}
           </motion.div>
+
+          {isLogged && (
+            <button className="pl-3 sm:block" onClick={() => logout()}>
+              <MdOutlineLogout className="h-6 w-6 text-primary-100 duration-200 hover:text-primary-200" />
+            </button>
+          )}
         </div>
       </div>
     </aside>

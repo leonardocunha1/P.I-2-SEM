@@ -1,26 +1,21 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { login as loginApi } from "@/services/user-services";
+import { logout as logoutApi } from "@/services/user-services";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
-export function useLogin() {
+export function useLogout() {
   const navigate = useNavigate();
   const queryClient = useQueryClient();
 
-  const { mutate: login, isPending } = useMutation({
-    mutationFn: ({ email, senha }) => loginApi(email, senha),
-    onSuccess: (user) => {
+  const { mutate: logout, isPending } = useMutation({
+    mutationFn: () => logoutApi(),
+    onSuccess: () => {
       navigate("/home", { replace: true });
       queryClient.invalidateQueries("userSession");
-      toast.success("Login bem-sucedido", {
-        autoClose: 1000,
-        theme: "colored",
-        pauseOnFocusLoss: false,
-      });
     },
     onError: (error) => {
       toast.error(error.message);
     },
   });
-  return { login, isPending };
+  return { logout, isPending };
 }
