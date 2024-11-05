@@ -115,6 +115,36 @@ export async function logout() {
   }
 }
 
+export async function updateUser(userData) {
+  const apiURL = `http://localhost:3000/alterar-dados-usuario`;
+
+  try {
+    // Enviar a solicitação para atualizar os dados do usuário
+    const response = await axios.post(
+      apiURL,
+      {
+        nome: userData.nome,
+        email: userData.email,
+        telefone: userData.telefone,
+        senha_atual: userData.senha_atual,
+        senha_nova: userData.senha_nova,
+      },
+      {
+        withCredentials: true, // Inclui cookies para autenticação
+      }
+    );
+
+    return response.data; // Retorna os dados atualizados, se necessário
+  } catch (error) {
+    console.error("Erro ao atualizar os dados do usuário:", error);
+
+    // Lança uma exceção com uma mensagem de erro adequada
+    throw {
+      message: error.response?.data?.error || "Erro ao atualizar dados do usuário",
+    };
+  }
+}
+
 export async function fetchPedidosCliente() {
   const apiURL = `http://localhost:3000/buscar-pedidos-clientes`;
   try {
