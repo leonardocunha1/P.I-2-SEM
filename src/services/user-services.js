@@ -131,16 +131,44 @@ export async function updateUser(userData) {
       },
       {
         withCredentials: true, // Inclui cookies para autenticação
-      }
+      },
     );
 
     return response.data; // Retorna os dados atualizados, se necessário
   } catch (error) {
     console.error("Erro ao atualizar os dados do usuário:", error);
+    console.log("AAAAAAAAAAAAAAAAAAAAAAAA");
 
     // Lança uma exceção com uma mensagem de erro adequada
     throw {
-      message: error.response?.data?.error || "Erro ao atualizar dados do usuário",
+      message:
+        error.response?.data?.message || "Erro ao atualizar dados do usuário",
+    };
+  }
+}
+
+export async function deleteUser(senha_atual) {
+  const apiURL = `http://localhost:3000/excluir-conta`;
+
+  try {
+    // Enviar a solicitação para excluir o usuário
+    const response = await axios.post(
+      apiURL,
+      {
+        senha_atual,
+      },
+      {
+        withCredentials: true, // Inclui cookies para autenticação
+      },
+    );
+
+    return response.data; // Retorna a resposta da exclusão, se necessário
+  } catch (error) {
+    console.error("Erro ao excluir o usuário:", error);
+
+    // Lança uma exceção com uma mensagem de erro adequada
+    throw {
+      message: error.response?.data?.message || "Erro ao excluir o usuário",
     };
   }
 }

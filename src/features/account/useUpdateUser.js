@@ -9,7 +9,7 @@ export function useUpdateUser() {
     mutationFn: (userData) => updateUserApi(userData),
     onSuccess: () => {
       // Invalida o cache de dados do usuário para garantir atualização
-      queryClient.invalidateQueries("user");
+      queryClient.invalidateQueries("userSession");
 
       // Exibe uma notificação de sucesso
       toast.success("Dados do usuário atualizados com sucesso", {
